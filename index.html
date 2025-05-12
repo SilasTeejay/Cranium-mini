@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Investment Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #registration-form {
+            opacity: 1; /* Make sure it's visible by default now */
+            transition: opacity 0.5s ease;
+        }
+        #registration-form.hidden {
+            display: none;
+        }
+        .feature-box {
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+        .feature-box:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+        .register-button {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .register-button:hover {
+            transform: scale(1.05);
+            background-color: #facc15;
+        }
+    </style>
+</head>
+<script src="main.js" defer></script>
+<body class="bg-gray-900 text-white font-sans overflow-x-hidden">
+
+<nav class="bg-gray-800 shadow-lg p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-yellow-400">Investify</h1>
+        <div class="hidden md:flex space-x-6">
+            <a href="#features" class="hover:text-yellow-300 transition">Features</a>
+            <a href="#about" class="hover:text-yellow-300 transition">About</a>
+            <a href="#register" class="hover:text-yellow-300 transition">Register</a>
+        </div>
+        <div class="md:hidden">
+            <button onclick="toggleMobileMenu()" class="focus:outline-none">
+                <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div id="mobile-menu" class="hidden fixed inset-0 bg-purple-900 bg-opacity-90 z-50 transition duration-500 ease-in-out transform translate-x-full">
+    <div class="bg-purple-800 w-80 h-full absolute right-0 p-6">
+        <button onclick="toggleMobileMenu()" class="mb-6 text-yellow-300">Close ✕</button>
+        <nav class="flex flex-col space-y-4">
+            <a href="#features" class="text-white hover:text-yellow-300">Features</a>
+            <a href="#about" class="text-white hover:text-yellow-300">About</a>
+            <a href="#register" class="text-white hover:text-yellow-300">Register</a>
+        </nav>
+    </div>
+</div>
+
+<section class="text-center py-24 px-4 bg-gradient-to-r from-purple-800 to-gray-900">
+    <h2 class="text-5xl font-bold mb-6 animate-pulse text-yellow-300">Your Gateway to Real Estate Investment</h2>
+    <p class="text-xl mb-8 text-gray-300">Invest in properties seamlessly with our user-friendly platform.</p>
+    <a href="#register" class="register-button bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold">Learn More / Register</a>
+</section>
+
+<section id="features" class="py-20 px-4 bg-gray-800">
+    <div class="max-w-6xl mx-auto text-center">
+        <h3 class="text-4xl font-bold mb-12 text-yellow-400">Platform Features</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-700 p-6 rounded-lg feature-box">
+                <h4 class="text-2xl font-semibold mb-3">Property Listings</h4>
+                <p>Browse verified real estate investment opportunities.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg feature-box">
+                <h4 class="text-2xl font-semibold mb-3">Secure Payments</h4>
+                <p>Invest with confidence using encrypted payment gateways.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg feature-box">
+                <h4 class="text-2xl font-semibold mb-3">Real-Time Updates</h4>
+                <p>Stay informed with instant updates and notifications.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-20 px-4 bg-gray-900">
+    <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-4xl font-bold mb-6 text-yellow-400">About Us</h3>
+        <p class="text-gray-300 leading-relaxed">Investify is a platform designed to democratize real estate investment. Our goal is to simplify access to lucrative property markets by offering transparency, security, and flexibility to all investors.</p>
+    </div>
+</section>
+
+<section id="register" class="py-20 px-4 bg-gray-800 text-center">
+    <h3 class="text-4xl font-bold mb-6 text-yellow-400">Register to learn more</h3>
+    <button onclick="showRegistrationForm()" class="register-button bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold mb-8">Register Now</button>
+    <div id="registration-form" class="mt-8 max-w-md mx-auto bg-gray-700 p-6 rounded-lg">
+        <iframe src="https://forms.gle/AUjHmKPqwJTRjQtz6" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <button onclick="hideRegistrationForm()" class="mt-4 text-red-300 hover:text-red-500">Close Form</button>
+    </div>
+</section>
+
+<footer class="bg-gray-900 text-center p-6 text-gray-500">
+    <p>© 2025 Investify. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
